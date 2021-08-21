@@ -1,0 +1,26 @@
+{
+   "manifest_version":3,
+   "name":"nytimes bypasser",
+   "version":"1.0.1",
+   "description":"Bypass nytimes.com - The New York Times's paywalls, just read as much as you need.",
+   "short_name":"nytimes bypasser",
+   "host_permissions":[
+      "https://www.nytimes.com/*"
+   ],
+   "content_scripts":[
+      {
+         "matches":[
+            "https://www.nytimes.com/*"
+         ],
+         "js":[
+            "content.js"
+         ],
+         "run_at":"document_end"
+      }
+   ],
+   "icons":{
+      "16":"icon16.png",
+      "48":"icon48.png",
+      "128":"icon128.png"
+   }
+}
