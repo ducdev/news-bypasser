@@ -1,26 +1,36 @@
 {
-   "manifest_version":3,
-   "name":"nytimes bypasser",
-   "version":"1.0.1",
-   "description":"Bypass nytimes.com - The New York Times's paywalls, just read as much as you need.",
-   "short_name":"nytimes bypasser",
-   "host_permissions":[
-      "https://www.nytimes.com/*"
+   "manifest_version": 3,
+   "name": "nytimes bypasser",
+   "version": "1.0.2",
+   "description": "Bypass nytimes.com and washingtonpost.com's paywalls, just read as much as you need.",
+   "short_name": "nytimes bypasser",
+   "host_permissions": [
+      "https://www.nytimes.com/*",
+      "https://www.washingtonpost.com/*"
    ],
-   "content_scripts":[
+   "content_scripts": [
       {
-         "matches":[
+         "matches": [
             "https://www.nytimes.com/*"
          ],
-         "js":[
-            "content.js"
+         "js": [
+            "nytimes.js"
          ],
-         "run_at":"document_end"
+         "run_at": "document_end"
+      },
+      {
+         "matches": [
+            "https://www.washingtonpost.com/*"
+         ],
+         "js": [
+            "washingtonpost.js"
+         ],
+         "run_at": "document_end"
       }
    ],
-   "icons":{
-      "16":"icon16.png",
-      "48":"icon48.png",
-      "128":"icon128.png"
+   "icons": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
    }
 }

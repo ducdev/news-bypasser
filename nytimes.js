@@ -1,9 +1,9 @@
-console.log('start')
+console.log('start detecting nytimes.com\'s paywall')
 let checks = 0
 const interval = setInterval(() => {
   console.log('checking')
   checks += 1
-  if (checks == 10) {
+  if (checks == 40) {
     clearInterval(interval)
     console.log('stopped checking, max 10 attempts')
   }
@@ -19,4 +19,4 @@ const interval = setInterval(() => {
     target.className = ''
     clearInterval(interval)
   }
-}, 500)
+}, 250)
