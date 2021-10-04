@@ -1,7 +1,7 @@
 {
    "manifest_version": 3,
    "name": "nytimes bypasser",
-   "version": "1.0.2",
+   "version": "1.0.3",
    "description": "Bypass nytimes.com and washingtonpost.com's paywalls, just read as much as you need.",
    "short_name": "nytimes bypasser",
    "host_permissions": [
