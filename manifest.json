@@ -1,36 +1,34 @@
 {
-   "manifest_version": 3,
-   "name": "nytimes bypasser",
-   "version": "1.0.3",
-   "description": "Bypass nytimes.com and washingtonpost.com's paywalls, just read as much as you need.",
-   "short_name": "nytimes bypasser",
-   "host_permissions": [
-      "https://www.nytimes.com/*",
-      "https://www.washingtonpost.com/*"
-   ],
-   "content_scripts": [
-      {
-         "matches": [
-            "https://www.nytimes.com/*"
-         ],
-         "js": [
-            "nytimes.js"
-         ],
-         "run_at": "document_end"
-      },
-      {
-         "matches": [
-            "https://www.washingtonpost.com/*"
-         ],
-         "js": [
-            "washingtonpost.js"
-         ],
-         "run_at": "document_end"
-      }
-   ],
-   "icons": {
-      "16": "icon16.png",
-      "48": "icon48.png",
-      "128": "icon128.png"
-   }
+  "manifest_version": 3,
+  "name": "nytimes bypasser",
+  "version": "1.0.4",
+  "description": "Bypass nytimes.com and washingtonpost.com's paywalls, just read as much as you need.",
+  "short_name": "nytimes bypasser",
+  "host_permissions": [
+    "https://www.nytimes.com/*",
+    "https://www.washingtonpost.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.nytimes.com/*"],
+      "exclude_matches": ["https://www.nytimes.com/interactive/*"],
+      "js": ["nytimes.js"],
+      "run_at": "document_end"
+    },
+    {
+      "matches": ["https://www.nytimes.com/interactive/*"],
+      "js": ["nytimes-interactive.js"],
+      "run_at": "document_end"
+    },
+    {
+      "matches": ["https://www.washingtonpost.com/*"],
+      "js": ["washingtonpost.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
 }
